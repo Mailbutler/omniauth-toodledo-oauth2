@@ -1,8 +1,6 @@
 # Omniauth::Toodledo::Oauth2
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/omniauth/toodledo/oauth2`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+An unofficial Omniauth OAuth2 strategy for Toodledo. Authentication flow based on [api.toodledo.com](https://api.toodledo.com/3/account/index.php).
 
 ## Installation
 
@@ -32,4 +30,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/omniauth-toodledo-oauth2.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Mailbutler/omniauth-toodledo-oauth2.

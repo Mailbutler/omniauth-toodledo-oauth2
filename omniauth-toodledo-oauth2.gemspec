@@ -1,4 +1,3 @@
-
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "omniauth/toodledo_oauth2/version"
@@ -11,7 +10,15 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{ Omniauth strategy for Toodledo }
   spec.description   = %q{ Omniauth strategy for Toodledo. This allows you to authenticate to Toodledo from your ruby app. }
-  spec.homepage      = 'https://github.com/Mailbutler/omniauth-toodle-oauth2'
+  spec.homepage      = 'https://github.com/Mailbutler/omniauth-toodledo-oauth2'
+  spec.license       = 'MIT'
+
+  if spec.respond_to?(:metadata)
+    spec.metadata["allowed_push_host"] = 'https://rubygems.org'
+  else
+    raise "RubyGems 2.0 or newer is required to protect against " \
+      "public gem pushes."
+  end
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
