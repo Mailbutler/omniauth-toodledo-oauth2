@@ -1,18 +1,18 @@
+# frozen_string_literal: true
+
 require 'omniauth/strategies/oauth2'
 
 module OmniAuth
   module Strategies
     class ToodledoOauth2 < OmniAuth::Strategies::OAuth2
-
       option :name, 'toodledo_oauth2'
 
-      option :client_options, {
-               site: "https://api.toodledo.com/",
-               authorize_url: "https://api.toodledo.com/3/account/authorize.php",
-               token_url: "https://api.toodledo.com/3/account/token.php"
-             }
+      option :client_options,
+             site: 'https://api.toodledo.com/',
+             authorize_url: '/3/account/authorize.php',
+             token_url: '/3/account/token.php'
 
-      uid { raw_info["id"] }
+      uid { raw_info['id'] }
 
       info do
         # raw_info.merge(token: access_token.token)
@@ -25,17 +25,13 @@ module OmniAuth
       extra do
         { raw_info: raw_info }
       end
-            
+
+      def callback_url
+        options['redirect_uri'] || full_host + script_name + callback_path
+      end
+
       def raw_info
-        @raw_info ||= access_token.get('https://api.toodledo.com/3/account/get.php').parsed
-      end
-
-      def request_phase
-        super
-      end
-
-      def callback_phase
-        super
+        @raw_info ||= access_token.get('/3/account/get.php').parsed
       end
     end
   end
